@@ -1,37 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>post list</title>
-    </head>
-    <body>
-        <h1>{{ site }}</h1>
-        <hr>
+{% extends "_base.html" %}
 
-        {% for post in posts %}
-            {{ post.title }}
-            <hr>
-        {% endfor %}
+{% block page_title %}
+    Post List WebPage
+{% endblock page_title %}
 
-        {% if page_obj.has_previous %}
-            <a href="?{{ view.page_kwarg }}={{ page_obj.previous_page_number }}">
-                {{ page_obj.previous_page_number }}
-            </a>-
-        {% endif %}
-        
-        <p style="color: red; display: inline;">
-            <a href="?{{ view.page_kwarg }}={{ page_obj.number }}">
-                {{ page_obj.number }}
-            </a>
-        </p>
-        
-        {% if page_obj.has_next %}
-            -
-            <a href="?{{ view.page_kwarg }}={{ page_obj.next_page_number }}">
-                {{ page_obj.next_page_number }} of {{ page_obj.paginator.num_pages }}
-            </a>
-        {% endif %}
+{% block page_content %}
+    <div class="container">
+        <div class="page-head">
+            <div>
+                <div class="eyebrow">Discover</div>
+                <h1 class="page-title">All posts</h1>
+                <p class="page-subtitle">Tutorials, engineering notes and practical experiences from the community.
+                </p>
+            </div>
+            <a href="post.html" class="btn btn-primary">+ New post</a>
+        </div>
+        <div class="card filter-bar">
+            <div class="search"><input type="search" placeholder="Search posts..."></div>
+            <select class="select" style="max-width:190px">
+                <option>All categories</option>
+                <option>Django</option>
+                <option>Python</option>
+                <option>JavaScript</option>
+                <option>DevOps</option>
+            </select>
+            <select class="select" style="max-width:160px">
+                <option>Newest</option>
+                <option>Oldest</option>
+                <option>Most liked</option>
+            </select>
+            <button class="btn btn-primary">Filter</button>
+        </div>
+        <div class="post-grid">
+            {% for post in posts %}
+                <article class="card post-card reveal"><a class="post-cover" href="post_detail.html"><img
+                            src=""
+                            alt=""></a>
+                    <div class="post-body">
+                        <div class="post-meta"><span>Python · 8 Sep</span><span>12 min</span></div>
+                        <h2 class="post-title"><a href="post_detail.html">{{ post.title }}</a></h2>
+                        <p class="post-excerpt">{{ post.body }}</p>
+                        <div class="tags"><span class="tag">Django</span><span class="tag">ORM</span></div>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+        <nav class="pagination" aria-label="Pagination">
+            <a href="#">‹</a><a href="#" class="current">1</a><a href="#">2</a><a href="#">3</a><span>...</span><a
+                href="#">12</a><a href="#">›</a>
+        </nav>
+    </div>
 
-    </body>
-</html>
+{% endblock page_content %}

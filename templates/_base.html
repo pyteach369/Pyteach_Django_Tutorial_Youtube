@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block page_title %}{% endblock page_title %}</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container navbar">
+            <a href="home.html" class="brand"><span class="brand-mark">D</span><span>DevBlog</span></a>
+            <nav class="nav-links">
+                <a href="home.html" data-nav>Home</a>
+                <a href="post_list.html" data-nav>Posts</a>
+                <a href="profile.html" data-nav>Profile</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+                <a href="post.html" class="btn btn-primary btn-sm">Write a post</a>
+            </div>
+            <button class="mobile-toggle" aria-label="Menu">☰</button>
+        </div>
+    </header>
+
+    <main>
+        {% block page_content %}{% endblock page_content %}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a class="brand" href="home.html"><span class="brand-mark">D</span><span>DevBlog</span></a>
+                    <p style="margin-top:12px;max-width:320px;">A clean Django-ready blog interface for building a
+                        serious backend project.</p>
+                </div>
+                <div>
+                    <h3>Explore</h3><a href="home.html">Home</a><a href="post_list.html">All posts</a><a
+                        href="profile.html">Profile</a>
+                </div>
+                <div>
+                    <h3>Account</h3><a href="login.html">Login</a><a href="signup.html">Sign up</a><a
+                        href="forget_password.html">Forgot password</a>
+                </div>
+                <div>
+                    <h3>Support</h3><a href="#">Contact admin</a><a href="#">Tickets</a><a href="#">Terms</a>
+                </div>
+            </div>
+            <div class="footer-bottom">© 2026 DevBlog. Frontend template — Django logic goes on top.</div>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
