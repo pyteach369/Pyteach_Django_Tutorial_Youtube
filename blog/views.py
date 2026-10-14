@@ -7,9 +7,13 @@ from .models import Post
 class PostListView(generic.ListView):
     # model = Post
     queryset = Post.objects.filter(status='pub')
+    ordering = ['title',]
+
     template_name = 'blog/post_list.html'
     context_object_name = 'posts'
 
-    ordering = ['title',]
+    paginate_by = 2
+    paginate_orphans = 1
 
-    paginate_by = 3
+    extra_context = {'site': 'pyteach.ir'}
+    page_kwarg = 'p'

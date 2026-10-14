@@ -6,26 +6,29 @@
         <title>post list</title>
     </head>
     <body>
+        <h1>{{ site }}</h1>
+        <hr>
+
         {% for post in posts %}
             {{ post.title }}
             <hr>
         {% endfor %}
 
         {% if page_obj.has_previous %}
-            <a href="?page={{ page_obj.previous_page_number }}">
+            <a href="?{{ view.page_kwarg }}={{ page_obj.previous_page_number }}">
                 {{ page_obj.previous_page_number }}
             </a>-
         {% endif %}
         
         <p style="color: red; display: inline;">
-            <a href="?page={{ page_obj.number }}">
+            <a href="?{{ view.page_kwarg }}={{ page_obj.number }}">
                 {{ page_obj.number }}
             </a>
         </p>
         
         {% if page_obj.has_next %}
             -
-            <a href="?page={{ page_obj.next_page_number }}">
+            <a href="?{{ view.page_kwarg }}={{ page_obj.next_page_number }}">
                 {{ page_obj.next_page_number }} of {{ page_obj.paginator.num_pages }}
             </a>
         {% endif %}
