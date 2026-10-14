@@ -46,8 +46,19 @@
             {% endfor %}
         </div>
         <nav class="pagination" aria-label="Pagination">
-            <a href="#">‹</a><a href="#" class="current">1</a><a href="#">2</a><a href="#">3</a><span>...</span><a
-                href="#">12</a><a href="#">›</a>
+            {% if page_obj.has_previous %}
+                <a href="?{{ view.page_kwarg}}={{ page_obj.previous_page_number}}">
+                    {{ page_obj.previous_page_number}}
+                </a>
+            {% endif %}
+
+            <a href="?{{ view.page_kwarg}}={{ page_obj.number }}" class="current">{{ page_obj.number }}</a>
+
+            {% if page_obj.has_next %}
+                <a href="?{{ view.page_kwarg}}={{ page_obj.next_page_number }}">
+                    {{ page_obj.next_page_number }}
+                </a>
+            {% endif %}
         </nav>
     </div>
 
