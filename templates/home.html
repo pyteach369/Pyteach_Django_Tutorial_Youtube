@@ -1,0 +1,91 @@
+{% extends "_base.html" %}
+
+{% block page_title %}
+    Home page
+{% endblock page_title %}
+
+{% block page_content %}
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="reveal">
+                <div class="eyebrow">Developer community</div>
+                <h1>Build. Share.<br><span>Learn together.</span></h1>
+                <p>A modern blog platform for developers to publish tutorials, share ideas, discuss code and grow
+                    together.</p>
+                <div class="hero-actions">
+                    <a href="post_list.html" class="btn btn-primary">Explore posts →</a>
+                    <a href="post.html" class="btn btn-secondary">Create a post</a>
+                </div>
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-value">12K+</div>
+                        <div class="stat-label">Published posts</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">4.8K</div>
+                        <div class="stat-label">Developers</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">36K</div>
+                        <div class="stat-label">Comments</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-card reveal">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80"
+                    alt="Coding workspace">
+                <div style="padding:15px 4px 2px">
+                    <div class="post-meta"><span>Featured article</span><span>8 min read</span></div>
+                    <h3 style="margin-top:5px;">How to design a clean Django architecture</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="page-head">
+                <div>
+                    <div class="eyebrow">Latest</div>
+                    <h2 class="page-title" style="font-size:2rem">Fresh from the community</h2>
+                </div>
+                <a href="post_list.html" class="btn btn-secondary">View all</a>
+            </div>
+            <div class="post-grid">
+                <article class="card post-card reveal"><a class="post-cover" href="post_detail.html"><img
+                            src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=900&q=80"
+                            alt=""></a>
+                    <div class="post-body">
+                        <div class="post-meta"><span>Python</span><span>12 min</span></div>
+                        <h3 class="post-title"><a href="post_detail.html">Understanding Django ORM without
+                                memorizing it</a></h3>
+                        <p class="post-excerpt">A practical mental model for queries, relationships and reusable
+                            managers.</p>
+                        <div class="tags"><span class="tag">Django</span><span class="tag">ORM</span></div>
+                    </div>
+                </article>
+                <article class="card post-card reveal"><a class="post-cover" href="post_detail.html"><img
+                            src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80"
+                            alt=""></a>
+                    <div class="post-body">
+                        <div class="post-meta"><span>Backend</span><span>9 min</span></div>
+                        <h3 class="post-title"><a href="post_detail.html">CBV patterns that make Django code
+                                cleaner</a></h3>
+                        <p class="post-excerpt">From get_queryset to form_valid and custom mixins.</p>
+                        <div class="tags"><span class="tag">CBV</span><span class="tag">Python</span></div>
+                    </div>
+                </article>
+                <article class="card post-card reveal"><a class="post-cover" href="post_detail.html"><img
+                            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80"
+                            alt=""></a>
+                    <div class="post-body">
+                        <div class="post-meta"><span>Web</span><span>7 min</span></div>
+                        <h3 class="post-title"><a href="post_detail.html">Building production-ready forms</a></h3>
+                        <p class="post-excerpt">Validation, user ownership and safe server-side defaults.</p>
+                        <div class="tags"><span class="tag">Forms</span><span class="tag">Security</span></div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+{% endblock page_content %}

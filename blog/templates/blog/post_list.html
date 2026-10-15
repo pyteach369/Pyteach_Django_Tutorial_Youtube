@@ -40,7 +40,7 @@
                     <div class="post-body">
                         <div class="post-meta"><span>Python · 8 Sep</span><span>12 min</span></div>
                         <h2 class="post-title"><a href="post_detail.html">{{ post.title }}</a></h2>
-                        <p class="post-excerpt">{{ post.body }}</p>
+                        <p class="post-excerpt">{{ post.body|truncatechars:30 }}</p>
                         <div class="tags"><span class="tag">Django</span><span class="tag">ORM</span></div>
                     </div>
                 </article>

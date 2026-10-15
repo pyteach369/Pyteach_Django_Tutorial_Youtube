@@ -13,11 +13,11 @@
 <body>
     <header class="site-header">
         <div class="container navbar">
-            <a href="home.html" class="brand"><span class="brand-mark">D</span><span>DevBlog</span></a>
+            <a href="{% url 'home' %}" class="brand"><span class="brand-mark">D</span><span>DevBlog</span></a>
             <nav class="nav-links">
-                <a href="home.html" data-nav>Home</a>
-                <a href="post_list.html" data-nav>Posts</a>
-                <a href="profile.html" data-nav>Profile</a>
+                <a href="{% url 'home' %}" data-nav>Home</a>
+                <a href="{% url 'post_list' %}" data-nav>Posts</a>
+                <a href="" data-nav>Profile</a>
             </nav>
             <div class="nav-actions">
                 <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
@@ -35,12 +35,12 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <a class="brand" href="home.html"><span class="brand-mark">D</span><span>DevBlog</span></a>
+                    <a class="brand" href="{% url 'home' %}"><span class="brand-mark">D</span><span>DevBlog</span></a>
                     <p style="margin-top:12px;max-width:320px;">A clean Django-ready blog interface for building a
                         serious backend project.</p>
                 </div>
                 <div>
-                    <h3>Explore</h3><a href="home.html">Home</a><a href="post_list.html">All posts</a><a
+                    <h3>Explore</h3><a href="{% url 'home' %}">Home</a><a href="{% url 'post_list' %}">All posts</a><a
                         href="profile.html">Profile</a>
                 </div>
                 <div>
