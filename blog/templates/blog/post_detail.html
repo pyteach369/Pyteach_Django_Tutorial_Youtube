@@ -1,0 +1,10 @@
+{% extends "_base.html" %}
+
+{% block page_title %}
+    Post Detail For {{ post.title }}
+{% endblock page_title %}
+
+{% block page_content %}
+    {{ post.title }}
+    {{ post.body|linebreaks }}
+{% endblock page_content %}

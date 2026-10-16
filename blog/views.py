@@ -17,3 +17,12 @@ class PostListView(generic.ListView):
 
     extra_context = {'site': 'pyteach.ir'}
     page_kwarg = 'p'
+
+
+class PostDetailView(generic.DetailView):
+    # model = Post
+    queryset = Post.objects.filter(status='pub')
+    template_name = 'blog/post_detail.html'
+    context_object_name = 'post'
+
+
