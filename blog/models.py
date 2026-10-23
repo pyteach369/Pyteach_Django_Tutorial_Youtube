@@ -9,6 +9,7 @@ class Post(models.Model):
 
     title = models.CharField(max_length=100)
     body = models.TextField()
+    code = models.SlugField()
 
     status = models.CharField(choices=STATUS_CHOICES)
 
