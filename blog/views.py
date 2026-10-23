@@ -27,9 +27,9 @@ class PostDetailView(generic.DetailView):
 
     pk_url_kwarg = 'id'
     # slug_url_kwarg = 'javad'
-    query_pk_and_slug = True
+    # query_pk_and_slug = True
     
-    slug_field = 'code'
+    # slug_field = 'code'
     
 
     extra_context = {'site': 'pyteach.ir'}
