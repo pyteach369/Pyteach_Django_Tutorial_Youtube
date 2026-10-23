@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import generic
 
 from .models import Post
+from .forms import PostCreationForm
 
 
 class PostListView(generic.ListView):
@@ -33,3 +34,15 @@ class PostDetailView(generic.DetailView):
     
 
     extra_context = {'site': 'pyteach.ir'}
+
+
+class PostCreateView(generic.CreateView):
+    # model + fields
+    # model = Post
+    # fields = ['title', 'body', 'status']
+
+    # form_class
+    form_class = PostCreationForm
+    
+    template_name = 'blog/post_create.html'
+    # success_url = reverse_lazy('post_list')
